@@ -1,11 +1,9 @@
 import streamlit as st
-from googletrans import Translator
+from deep_translator import GoogleTranslator
 
 st.set_page_config(page_title="Language Translator")
 
 st.title("🌍 Language Translation Tool")
-
-translator = Translator()
 
 languages = {
     "English": "en",
@@ -25,15 +23,14 @@ target = st.selectbox("Target Language", list(languages.keys()))
 
 if st.button("Translate"):
     try:
-        translated = translator.translate(
-            text,
-            src=languages[source],
-            dest=languages[target]
-        )
+        translated = GoogleTranslator(
+            source=languages[source],
+            target=languages[target]
+        ).translate(text)
 
         st.success("Translation Completed")
         st.write("### Translated Text")
-        st.write(translated.text)
+        st.write(translated)
 
     except Exception as e:
         st.error(f"Error: {e}")
