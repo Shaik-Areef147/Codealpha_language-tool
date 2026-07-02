@@ -8,7 +8,8 @@
 - Python
 - Streamlit
 - Deep Translator
-# Run Project
-pip install -r requirements.txt
+## 🌐 Open Application
 
-streamlit run app.py
+
+https://codealphalanguage-tool-8wsqepgqf9fnksnrrr2dr9.streamlit.app/
+
